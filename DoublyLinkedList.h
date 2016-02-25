@@ -111,6 +111,17 @@ public:
 
         // Removing first element
         if (pos == 0) {
+            // [ ]<-----+
+            //  ^       |
+            //  |       |
+            // head    tail
+            if (head == tail) {
+                // [ ]     NULL
+                //  ^       ^
+                //  |       |
+                // head    tail
+                tail->setPrev(NULL);
+            }
             // Head moves forward
             // [ ]<->[ ]->[ ]->[ ]->[ ]->[ ]->[ ]
             //        ^                        ^
